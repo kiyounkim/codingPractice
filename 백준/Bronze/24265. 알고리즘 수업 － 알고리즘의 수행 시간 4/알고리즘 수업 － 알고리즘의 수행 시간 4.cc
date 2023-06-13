@@ -2,9 +2,9 @@
 using namespace std;
 
 int main() {
-    int n;
+    unsigned long long n;
     cin >> n;
-    cout << (unsigned long long)n * (n - 1) / 2 << '\n';
+    cout << n * (n - 1) / 2 << '\n';
     cout << "2\n";
     return 0;
 }
