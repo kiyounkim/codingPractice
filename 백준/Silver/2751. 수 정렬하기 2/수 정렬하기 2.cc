@@ -1,22 +1,18 @@
 #include <iostream>
 #include <algorithm>
 using namespace std;
-
-int num[1000000];   // 배열의 크기가 크므로 전역범위에서 선언
-
 int main() {
-	int N;          // 수의 개수
-	cin >> N;
+    int n;
+    cin >> n;
+    int a[1000000];
 
-	for (int i = 0; i < N; i++) {
-		cin >> num[i];
-	}
+    for (int i = 0; i < n; i++)
+        cin >> a[i];
 
-	sort(num, num + N);
+    sort(a, a + n);
 
-	for (int i = 0; i < N; i++) {
-		cout << num[i] << "\n";
-	}
+    for (int i = 0; i < n; i++)
+        cout << a[i] << "\n";
 
-	return 0;
+    return 0;
 }
