@@ -1,13 +1,9 @@
 #include <iostream>
-#include <algorithm>
+#include <cmath>
 using namespace std;
 
-int main() {
-	
-	long long int N, M;
-	
-	cin >> N >> M;
-	cout << abs(N-M);
-	
-	return 0;
+int main(){
+    long long n,m;
+    cin >> n >> m;
+    cout << abs(n-m) << endl;
 }
