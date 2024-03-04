@@ -1,20 +1,26 @@
-#include <iostream>
-
+#include<iostream>
 using namespace std;
 
-int main(){
-    int T;
-    cin >> T;
-    for(int i=0;i<T;i++){
-        int samples,totalItems;
-        cin >> samples >> totalItems;
-        long long ans = 1;
-        int r = 1;
-        for(int j=totalItems;j>totalItems-samples;j--){
-            ans *=j;
-            ans /= r;
-            r++;
-        }
-        cout << ans << endl;
+
+ unsigned long long int Fac(int n, int cnt)
+{
+    if (n <= 1 || cnt == 0) return 1;
+    return n * Fac(n - 1, cnt - 1);
+}
+
+int main()
+{
+    int tCnt;
+    cin >> tCnt;
+
+    while (tCnt--)
+    {
+        int a, b;
+        cin >> a >> b;
+
+        if (b - a < a)
+            a = b - a;
+
+        cout << Fac(b, a) / Fac(a, a) << '\n';
     }
 }
