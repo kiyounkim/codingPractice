@@ -1,21 +1,18 @@
 #include <iostream>
-#include <algorithm>
+#include <cmath>
 using namespace std;
- 
 
-long long solve(long long n, int m, int c){
-    if(m==1) return n%c;
-    long long tmp = solve(n, m/2, c);
-    if(m%2==0) return (tmp*tmp)%c;
-    else return (((tmp*tmp)%c)*n)%c;
+long long solve(int a,int b, int c){
+    if(b==1) return a%c;
+    if(b%2==0) return (solve(a,b/2,c)*solve(a,b/2,c))%c;
+    return (((solve(a,b/2,c)*solve(a,b/2,c))%c)*a)%c;
 }
-int main() {
+
+int main(void) {
     ios::sync_with_stdio(false);
-    cin.tie(NULL);
-    cout.tie(NULL);
-    long long n;
-    int m, c;
-    cin >> n >> m >> c;
-    cout << solve(n, m, c);
+    cin.tie(0);
+    int a,b,c;
+    cin >> a >> b >> c;
+    cout << solve(a,b,c);
     return 0;
 }
