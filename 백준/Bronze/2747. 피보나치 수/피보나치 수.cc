@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-int arr[1000000];
+int arr[45];
 int fib(int n){
 	if(n == 0) return 0;
 	if(n == 1) return 1;
